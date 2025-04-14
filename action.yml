@@ -21,7 +21,7 @@ inputs:
   version:
     description: "Frontend version of Logseq - git tag or SHA"
     required: false
-    default: "5.3.6"
+    default: "v5.3.6"
 
 runs:
   using: "composite"
@@ -42,8 +42,8 @@ runs:
 
     - uses: actions/checkout@v4
       with:
-        repository: TiddlyWiki/TiddlyWiki5
-        # @${{ inputs.version }}
+        repository: TiddlyWiki/TiddlyWiki5@${{ inputs.version }}
+        fetch-depth: 1
         path: ${{ inputs.tiddlywiki-lib-folder }}
 
     - name: Build Page

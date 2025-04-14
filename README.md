@@ -1,6 +1,6 @@
 ## TiddlyWiki Publish SPA
 
-## Usage
+## Action Usage
 
 ```bash
 name: Deploy TiddlyWiki to GitHub Pages

@@ -21,7 +21,7 @@ inputs:
   version:
     description: "Frontend version of Logseq - git tag or SHA"
     required: false
-    default: "latest"
+    default: "@5.3.6"
 
 runs:
   using: "composite"
@@ -46,7 +46,7 @@ runs:
         path: ${{ inputs.tiddlywiki-lib-folder }}
 
     - name: Build Page
-      run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }}
+      run: ls && node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }}
       shell: bash
 
     # - name: Upload artifact

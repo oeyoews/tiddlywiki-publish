@@ -2,6 +2,10 @@ name: "TiddlyWiki Publish SPA"
 description: "TiddlyWiki Publish SPA"
 
 inputs:
+  actions-folder:
+    description: "Directory for published"
+    required: false
+    default: ".actions"
   tiddlers-directory:
     description: "Directory for published"
     required: true
@@ -19,6 +23,10 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4
+      with:
+        repository: oeyoews/tiddlywiki-publish
+        path: ${{ inputs.actions-folder }}
+
     - uses: oven-sh/setup-bun@v1
       with:
         bun-version: latest
@@ -26,10 +34,9 @@ runs:
     - name: Install Dependency
       run: bun install # --production
       shell: bash
-      working-directory: ${{ github.action_path }}
 
     - name: Build Page
-      run: node  ${{ github.action_path }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }}
+      run: node ${{ inputs.actions-folder }} ./publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }}
       shell: bash
 
     # - name: Upload artifact

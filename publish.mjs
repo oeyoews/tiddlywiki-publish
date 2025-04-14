@@ -18,7 +18,7 @@ if (tiddlerDir && fs.existsSync(path.join(__dirname, tiddlerDir))) {
   if (tiddlerDir !== 'tiddler') {
     const tiddlywikiInfoPath = `${tiddlerDir}/tiddlywiki.info`;
     if (!fs.existsSync(tiddlywikiInfoPath)) {
-      fs.copyFileSync('tiddlywiki.info', tiddlywikiInfoPath);
+      fs.copyFileSync(path.join(import.meta.dirname, './actions/tiddlywiki.info'), tiddlywikiInfoPath);
     }
   }
 } else {

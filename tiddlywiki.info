@@ -10,6 +10,8 @@
 	],
 	"build": {
 		"index": [
+			"--output",
+			".tiddlywiki",
 			"--render",
 			"$:/plugins/tiddlywiki/tiddlyweb/save/offline",
 			"index.html",

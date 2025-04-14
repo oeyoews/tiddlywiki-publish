@@ -42,7 +42,8 @@ runs:
 
     - uses: actions/checkout@v4
       with:
-        repository: TiddlyWiki/TiddlyWiki5@${{ inputs.version }}
+        repository: TiddlyWiki/TiddlyWiki5
+        ref: ${{ inputs.version }}
         fetch-depth: 1
         path: ${{ inputs.tiddlywiki-lib-folder }}
 
@@ -62,3 +63,5 @@ runs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: ${{ inputs.output-directory}}
+        silent: true
+        force: true

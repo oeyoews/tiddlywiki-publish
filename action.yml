@@ -42,7 +42,8 @@ runs:
 
     - uses: actions/checkout@v4
       with:
-        repository: TiddlyWiki/TiddlyWiki5@${{ inputs.version }}
+        repository: TiddlyWiki/TiddlyWiki5
+        # @${{ inputs.version }}
         path: ${{ inputs.tiddlywiki-lib-folder }}
 
     - name: Build Page

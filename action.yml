@@ -26,14 +26,14 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v4
-    - uses: oven-sh/setup-bun@v1
-      with:
-        bun-version: latest
+    # - uses: actions/checkout@v4
+    # - uses: oven-sh/setup-bun@v1
+    #   with:
+    #     bun-version: latest
 
-    - name: Install Dependency
-      run: bun install # --production
-      shell: bash
+    # - name: Install Dependency
+    #   run: bun install # --production
+    #   shell: bash
 
     - uses: actions/checkout@v4
       with:

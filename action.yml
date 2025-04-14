@@ -21,7 +21,7 @@ inputs:
   version:
     description: "Frontend version of Logseq - git tag or SHA"
     required: false
-    default: "@5.3.6"
+    default: "5.3.6"
 
 runs:
   using: "composite"

@@ -31,7 +31,15 @@ runs:
       run: node ./publish.mjs --tiddler-directory ${{ inputs.tiddlers-directory }}
       shell: bash
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+    # - name: Upload artifact
+    #   uses: actions/upload-pages-artifact@v3
+    #   with:
+    #     path: ${{ inputs.output-directory}}
+
+    # - name: Deploy to GitHub Pages
+    #   id: deployment
+    #   uses: actions/deploy-pages@v4
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
         path: ${{ inputs.output-directory}}

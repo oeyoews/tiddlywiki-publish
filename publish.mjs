@@ -21,7 +21,5 @@ if (tiddlerDir && fs.existsSync(path.resolve(tiddlerDir))) {
 	command.unshift('.');
 }
 
-
-
 await tiddlywiki(command)
 console.log('publish success')

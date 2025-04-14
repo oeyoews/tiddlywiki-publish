@@ -19,12 +19,7 @@ jobs:
   release-and-page:
     runs-on: ubuntu-latest
     name: Publish
-    environment: production
     steps:
       - uses: oeyoews/tiddlywiki-publish@main
         with:
           tiddlers-directory: tiddlers
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

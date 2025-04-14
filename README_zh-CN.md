@@ -31,6 +31,7 @@ jobs:
       - uses: oeyoews/tiddlywiki-publish@main
         with:
           tiddlers-directory: .
+          version: v5.3.6
 ```
 
 **注意：**

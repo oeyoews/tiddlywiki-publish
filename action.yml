@@ -42,4 +42,4 @@ runs:
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        path: ${{ inputs.output-directory}}
+        folder: ${{ inputs.output-directory}}

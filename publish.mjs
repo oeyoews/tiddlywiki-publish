@@ -22,4 +22,4 @@ if (tiddlerDir && fs.existsSync(path.resolve(tiddlerDir))) {
 }
 
 await tiddlywiki(command)
-console.log('publish success')
+console.log('publish success', command)

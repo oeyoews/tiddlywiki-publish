@@ -24,4 +24,4 @@ if (tiddlerDir && fs.existsSync(path.join(__dirname, tiddlerDir))) {
 }
 
 await tiddlywiki(command);
-console.log('publish success');
+console.log('publish success', command);

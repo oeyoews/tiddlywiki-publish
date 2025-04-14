@@ -23,3 +23,7 @@ jobs:
       - uses: oeyoews/tiddlywiki-publish@main
         with:
           tiddlers-directory: tiddlers
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

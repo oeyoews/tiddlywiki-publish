@@ -10,6 +10,7 @@
 	],
 	"build": {
 		"index": [
+			"--verbose",
 			"--output",
 			".tiddlywiki",
 			"--render",

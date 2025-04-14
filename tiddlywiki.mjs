@@ -1,4 +1,4 @@
-import { TiddlyWiki } from './lib/TiddlyWiki5/boot/boot.js';
+import { TiddlyWiki } from './lib/boot/boot.js';
 
 export const tiddlywiki = (args = [], preloadTiddlers = [], callback) => {
   return new Promise((resolve, reject) => {

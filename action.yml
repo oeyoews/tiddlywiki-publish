@@ -13,7 +13,7 @@ inputs:
   tiddlers-directory:
     description: "Directory for published"
     required: true
-    default: "tiddlers"
+    default: "."
   output-directory:
     description: "Directory for published"
     required: false

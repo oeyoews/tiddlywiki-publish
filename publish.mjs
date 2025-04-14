@@ -15,7 +15,7 @@ const __dirname = import.meta.dirname;
 if (tiddlerDir && fs.existsSync(path.join(__dirname, tiddlerDir))) {
   command.unshift(tiddlerDir);
   // 如果tiddlerDir !== tiddler, 并且tiddlerDir 不存在tiddlywiki.info, 就把tiddlywiki.info 复制到tiddlerDir
-  if (tiddlerDir !== 'tiddler') {
+  if (tiddlerDir !== '.') {
     const tiddlywikiInfoPath = `${tiddlerDir}/tiddlywiki.info`;
     if (!fs.existsSync(tiddlywikiInfoPath)) {
       fs.copyFileSync(path.join(__dirname, './actions/tiddlywiki.info'), tiddlywikiInfoPath);

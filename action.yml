@@ -47,7 +47,7 @@ runs:
         path: ${{ inputs.tiddlywiki-lib-folder }}
 
     - name: Build Page
-      run: ls lib && node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }}
+      run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }} && ls && ls .tiddlywiki
       shell: bash
 
     # - name: Upload artifact

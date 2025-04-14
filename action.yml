@@ -25,9 +25,11 @@ runs:
 
     - name: Install Dependency
       run: bun install # --production
+      shell: bash
 
     - name: Build Page
       run: node ./publish.mjs --tiddler-directory ${{ inputs.tiddler-directory }}
+      shell: bash
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3

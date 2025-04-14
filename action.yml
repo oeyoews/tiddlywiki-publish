@@ -28,7 +28,7 @@ runs:
       shell: bash
 
     - name: Build Page
-      run: node ./publish.mjs --tiddler-directory ${{ inputs.tiddler-directory }}
+      run: node ./publish.mjs --tiddler-directory ${{ inputs.tiddlers-directory }}
       shell: bash
 
     - name: Upload artifact

@@ -4,10 +4,11 @@ import { tiddlywiki } from './tiddlywiki.mjs'
 const args = process.argv.slice(2);
 const tiddlerDirIndex = args.findIndex(arg => arg === '--tiddler-directory');
 const tiddlerDir = tiddlerDirIndex !== -1 ? args[tiddlerDirIndex + 1] : undefined;
+console.log(tiddlerDir, 'tiddler dir')
 
 const command = ['--build'];
 if (tiddlerDir) {
-    command.unshift( tiddlerDir);
+    command.unshift(tiddlerDir);
 } else {
 	command.unshift( './tiddlers');
 }

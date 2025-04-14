@@ -1,0 +1,39 @@
+name: "TiddlyWiki Publish SPA"
+description: "TiddlyWiki Publish SPA"
+
+inputs:
+  tiddlers-directory:
+    description: "Directory for published"
+    required: true
+    default: "tiddlers"
+  output-directory:
+    description: "Directory for published"
+    required: false
+    default: '.tiddlywiki'
+  version:
+    description: "Frontend version of Logseq - git tag or SHA"
+    required: false
+    default: '5.3.6'
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+    - uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: latest
+
+    - name: Install Dependency
+      run: bun install # --production
+
+    - name: Build Page
+      run: node ./publish.mjs --tiddler-directory ${{ inputs.tiddler-directory }}
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ${{ inputs.output-directory}}
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

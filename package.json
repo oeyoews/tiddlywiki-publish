@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "tiddlywiki src --listen",
     "build": "node ./publish.mjs"
   },
   "keywords": [],

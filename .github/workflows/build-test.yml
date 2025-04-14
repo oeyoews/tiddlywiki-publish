@@ -6,15 +6,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  pages: write
-  # contents: write
-  # id-token: write
-
-
-permissions:
   contents: write
-  pages: write
-  id-token: write
+  # pages: write
+  # id-token: write
 
 
 concurrency:

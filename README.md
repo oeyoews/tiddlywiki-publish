@@ -1,6 +1,10 @@
 ## TiddlyWiki Publish SPA
 
+[中文文档](README_zh-CN.md) | English
+
 ## Action Usage
+
+1.  Save the above code snippet as `.github/workflows/build.yml` file.
 
 ```bash
 name: Deploy TiddlyWiki to GitHub Pages
@@ -15,7 +19,6 @@ permissions:
   id-token: write
   contents: write
 
-
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -27,5 +30,11 @@ jobs:
     steps:
       - uses: oeyoews/tiddlywiki-publish@main
         with:
-          tiddlers-directory: src
+          tiddlers-directory: .
 ```
+
+**Note:**
+
+1.  This Action is used to publish TiddlyWiki sites to GitHub Pages.
+2.  `tiddlers-directory` specifies the directory containing TiddlyWiki tiddlers.
+3.  After successful deployment, go to GitHub repository's Settings -> Pages -> Deploy from branch, and select the `gh-pages` branch as the deployment source.

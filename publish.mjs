@@ -1,4 +1,5 @@
 import { tiddlywiki } from './tiddlywiki.mjs'
+import fs from 'fs'
 
 // 获取命令行参数
 const args = process.argv.slice(2);

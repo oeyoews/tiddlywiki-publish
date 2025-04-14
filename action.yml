@@ -9,7 +9,7 @@ inputs:
   tiddlywiki-lib-folder:
     description: "Directory for published"
     required: false
-    default: "lib"
+    default: "lib/tiddlywiki"
   tiddlers-directory:
     description: "Directory for published"
     required: true

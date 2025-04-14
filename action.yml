@@ -26,9 +26,10 @@ runs:
     - name: Install Dependency
       run: bun install # --production
       shell: bash
+      working-directory: ${{ github.action_path }}
 
     - name: Build Page
-      run: node ./publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }}
+      run: node  ${{ github.action_path }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }}
       shell: bash
 
     # - name: Upload artifact

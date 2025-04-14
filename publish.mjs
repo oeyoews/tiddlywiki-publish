@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { tiddlywiki } from './tiddlywiki.mjs';
 import fs from 'fs';
 import path from 'path';

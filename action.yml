@@ -6,6 +6,10 @@ inputs:
     description: "Directory for published"
     required: false
     default: ".actions"
+  tiddlywiki-lib-folder:
+    description: "Directory for published"
+    required: false
+    default: "lib"
   tiddlers-directory:
     description: "Directory for published"
     required: true
@@ -17,7 +21,7 @@ inputs:
   version:
     description: "Frontend version of Logseq - git tag or SHA"
     required: false
-    default: '5.3.6'
+    default: "latest"
 
 runs:
   using: "composite"
@@ -35,6 +39,11 @@ runs:
       with:
         repository: oeyoews/tiddlywiki-publish
         path: ${{ inputs.actions-folder }}
+
+    - uses: actions/checkout@v4
+      with:
+        repository: TiddlyWiki/TiddlyWiki5@${{ inputs.version }}
+        path: ${{ inputs.tiddlywiki-lib-folder }}
 
     - name: Build Page
       run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }}

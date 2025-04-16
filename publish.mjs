@@ -68,7 +68,7 @@ const preloadTiddlers = [];
 const tiddlerConfigs = [
   { arg: 'defaultHomeTiddler', title: '$:/DefaultTiddlers' },
   { arg: 'siteTitle', title: '$:/SiteTitle' },
-  { arg: 'favicon', title: '$:/favicon.ico', type: "image/svg+xml" },
+  { arg: 'favicon', title: '$:/favicon.ico' },
 ];
 
 for (const { arg, title } of tiddlerConfigs) {
@@ -76,7 +76,7 @@ for (const { arg, title } of tiddlerConfigs) {
     const faviconPath = path.join(__dirname, args[arg]);
     if (fs.existsSync(faviconPath)) {
       const text = fs.readFileSync(faviconPath, 'utf-8');
-      preloadTiddlers.push({ title, text });
+      preloadTiddlers.push({ title, text, type: "image/svg+xml" });
     }
     break;
   }

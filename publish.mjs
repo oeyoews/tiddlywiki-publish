@@ -32,7 +32,7 @@ if (tiddlerDir) {
   if (tiddlerPath) {
     buildArgs.unshift(tiddlerDir);
   } else {
-    console.error(tiddlerPath, 'is not existing')
+    console.error('❌', tiddlerPath, 'is not existing');
   }
   // 如果tiddlerDir !== tiddler, 并且tiddlerDir 不存在tiddlywiki.info, 就把tiddlywiki.info 复制到tiddlerDir
   // if (tiddlerDir !== '.') {
@@ -49,4 +49,4 @@ if (tiddlerDir) {
 }
 
 await tiddlywiki(buildArgs);
-console.log('publish success', buildArgs);
+console.log('✅ TiddlyWiki Publish successfully! 🎉');

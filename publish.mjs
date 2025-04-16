@@ -31,6 +31,7 @@ const defaultTiddlersIndex = args.findIndex((arg) =>
 const defaultTiddlersValue = args[defaultTiddlersIndex].slice(
   defaultHomeTiddlers.length+1
 );
+console.log(defaultTiddlersValue)
 
 // const command = ['--build'];
 const __dirname = import.meta.dirname;

@@ -1,6 +1,6 @@
 // local dev test
-// import { TiddlyWiki } from 'tiddlywiki';
-import { TiddlyWiki } from '../lib/tiddlywiki/boot/boot.js';
+import { TiddlyWiki } from 'tiddlywiki';
+// import { TiddlyWiki } from '../lib/tiddlywiki/boot/boot.js';
 
 export const tiddlywiki = (args = [], preloadTiddlers = [], callback) => {
   return new Promise((resolve, reject) => {

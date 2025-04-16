@@ -18,6 +18,10 @@ inputs:
     description: "Directory for published"
     required: false
     default: '.tiddlywiki'
+  default-home-tiddlers:
+    description: "default homepage tiddler"
+    required: false
+    default: ""
   version:
     description: "Frontend version of Logseq - git tag or SHA"
     required: false
@@ -48,7 +52,7 @@ runs:
         path: ${{ inputs.tiddlywiki-lib-folder }}
 
     - name: Build Page
-      run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }}
+      run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }} --default-home-tiddlers ${{ inputs.default-home-tiddlers }}
       shell: bash
 
     # - name: Upload artifact

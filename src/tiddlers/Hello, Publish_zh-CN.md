@@ -10,33 +10,7 @@ TiddlyWiki 发布 SPA 是一个用于将 TiddlyWiki 站点一键部署到 GitHub
 
 1.  将以下代码片段保存为 `.github/workflows/build.yml` 文件。
 
-```bash
-name: Deploy TiddlyWiki to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  pages: write
-  id-token: write
-  contents: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
-jobs:
-  release-and-page:
-    runs-on: ubuntu-latest
-    name: Publish
-    steps:
-      - uses: oeyoews/tiddlywiki-publish@main
-        with:
-          tiddlers-directory: .
-          version: v5.3.6
-```
+{{build.yml}}
 
 **注意事项：**
 

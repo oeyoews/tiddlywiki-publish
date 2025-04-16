@@ -27,7 +27,6 @@ const defaultTiddlersIndex = args.findIndex((arg) => arg === '--default-home-tid
 const defaultTiddlersValue =
   defaultTiddlersIndex !== -1 ? args[defaultTiddlersIndex + 1] : undefined;
 
-
 // const command = ['--build'];
 const __dirname = import.meta.dirname;
 if (tiddlerDir) {

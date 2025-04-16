@@ -25,13 +25,14 @@ const _args = process.argv.slice(2);
  * 解析命令行参数
  * @typedef {Object} Args
  * @property {string} [tiddlerDir] - tiddlers 目录
+ * @property {string} [favicon] - favicon
  * @property {string} [defaultHomeTiddler] - 默认首页 tiddler
  * @property {string} [siteTitle] - 站点标题
  */
 
 /** @type {Args} */
 const args = minimist(_args, {
-  string: ['tiddlers-directory', 'default-home-tiddlers', 'site-title'],
+  string: ['tiddlers-directory', 'default-home-tiddlers', 'site-title', 'favicon'],
   unknown: false,
   alias: {
     tiddlerDir: 'tiddlers-directory',
@@ -57,6 +58,11 @@ if (args.tiddlerDir) {
   buildArgs.unshift('.');
 }
 
+const faviconTiddler = {
+  title: '$:/favicon.ico',
+  text: '',
+};
+
 const defaultTiddlers = {
   title: '$:/DefaultTiddlers',
   text: '',
@@ -68,6 +74,7 @@ const siteTitleTiddler = {
 };
 
 const preloadTiddlers = [];
+
 if (args.defaultHomeTiddler) {
   defaultTiddlers.text = args.defaultHomeTiddler;
   preloadTiddlers.push(defaultTiddlers);
@@ -76,6 +83,11 @@ if (args.defaultHomeTiddler) {
 if (args.siteTitle) {
   siteTitleTiddler.text = args.siteTitle;
   preloadTiddlers.push(siteTitleTiddler);
+}
+
+if (args.favicon) {
+  faviconTiddler.text = args.favicon
+  preloadTiddlers.push(faviconTiddler)
 }
 
 // console.log(preloadTiddlers, 'preloadTiddlers');

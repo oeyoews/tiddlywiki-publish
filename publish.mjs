@@ -32,7 +32,12 @@ const _args = process.argv.slice(2);
 
 /** @type {Args} */
 const args = minimist(_args, {
-  string: ['tiddlers-directory', 'default-home-tiddlers', 'site-title', 'favicon'],
+  string: [
+    'tiddlers-directory',
+    'default-home-tiddlers',
+    'site-title',
+    'favicon',
+  ],
   unknown: false,
   alias: {
     tiddlerDir: 'tiddlers-directory',
@@ -67,6 +72,14 @@ const tiddlerConfigs = [
 ];
 
 for (const { arg, title } of tiddlerConfigs) {
+  if (arg === 'favicon' && args[arg]) {
+    const faviconPath = path.join(__dirname, args[arg]);
+    if (fs.existsSync(faviconPath)) {
+      const text = fs.readFileSync(faviconPath);
+      preloadTiddlers.push({ title, text });
+    }
+    return;
+  }
   if (args[arg]) {
     preloadTiddlers.push({ title, text: args[arg] });
   }

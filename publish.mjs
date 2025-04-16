@@ -58,36 +58,18 @@ if (args.tiddlerDir) {
   buildArgs.unshift('.');
 }
 
-const faviconTiddler = {
-  title: '$:/favicon.ico',
-  text: '',
-};
-
-const defaultTiddlers = {
-  title: '$:/DefaultTiddlers',
-  text: '',
-};
-
-const siteTitleTiddler = {
-  title: '$:/SiteTitle',
-  text: '',
-};
-
 const preloadTiddlers = [];
 
-if (args.defaultHomeTiddler) {
-  defaultTiddlers.text = args.defaultHomeTiddler;
-  preloadTiddlers.push(defaultTiddlers);
-}
+const tiddlerConfigs = [
+  { arg: 'defaultHomeTiddler', title: '$:/DefaultTiddlers' },
+  { arg: 'siteTitle', title: '$:/SiteTitle' },
+  { arg: 'favicon', title: '$:/favicon.ico' },
+];
 
-if (args.siteTitle) {
-  siteTitleTiddler.text = args.siteTitle;
-  preloadTiddlers.push(siteTitleTiddler);
-}
-
-if (args.favicon) {
-  faviconTiddler.text = args.favicon
-  preloadTiddlers.push(faviconTiddler)
+for (const { arg, title } of tiddlerConfigs) {
+  if (args[arg]) {
+    preloadTiddlers.push({ title, text: args[arg] });
+  }
 }
 
 // console.log(preloadTiddlers, 'preloadTiddlers');

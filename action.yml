@@ -6,6 +6,9 @@ inputs:
     description: ""
     required: false
     default: ""
+  favicon:
+    description: "site favicon"
+    required: false
   actions-folder:
     description: "action folder"
     required: false
@@ -56,7 +59,7 @@ runs:
         path: ${{ inputs.tiddlywiki-lib-folder }}
 
     - name: Build Page
-      run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }} --default-home-tiddlers "${{ inputs.default-home-tiddlers }}" --site-title "${{ inputs.site-title }}"
+      run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }} --default-home-tiddlers "${{ inputs.default-home-tiddlers }}" --site-title "${{ inputs.site-title }}" --favicon "${{ inputs.favicon }}"
       shell: bash
 
     # - name: Upload artifact

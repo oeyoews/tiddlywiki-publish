@@ -65,10 +65,10 @@ const defaultTiddlers = {
 if (defaultTiddlersValue) {
   defaultTiddlers.text = defaultTiddlersValue
     .split(',')
-    .map((item) => item.trim());
+    .map((item) => `[[${item.trim()}]]`);
 }
 
-// console.log(defaultTiddlers, 'DefaultTiddlers', defaultTiddlersValue);
+console.log(defaultTiddlers, 'DefaultTiddlers', defaultTiddlersValue);
 
 await tiddlywiki(buildArgs, defaultTiddlersValue ? [defaultTiddlers] : []);
 console.log('✅ TiddlyWiki Publish successfully! 🎉');

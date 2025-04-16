@@ -78,8 +78,7 @@ for (const { arg, title } of tiddlerConfigs) {
       const text = fs.readFileSync(faviconPath);
       preloadTiddlers.push({ title, text });
     }
-    return;
-  }
+  } else
   if (args[arg]) {
     preloadTiddlers.push({ title, text: args[arg] });
   }

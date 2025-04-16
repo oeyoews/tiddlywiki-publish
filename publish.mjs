@@ -68,7 +68,7 @@ const preloadTiddlers = [];
 const tiddlerConfigs = [
   { arg: 'defaultHomeTiddler', title: '$:/DefaultTiddlers' },
   { arg: 'siteTitle', title: '$:/SiteTitle' },
-  { arg: 'favicon', title: '$:/favicon.ico' },
+  { arg: 'favicon', title: '$:/favicon.ico', type: "image/svg+xml" },
 ];
 
 for (const { arg, title } of tiddlerConfigs) {

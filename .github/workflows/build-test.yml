@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: oeyoews/tiddlywiki-publish@main
         with:
-          site-title: "TiddlyWiki Publish Actions 🛠️"
+          site-title: "🛠 TiddlyWiki Publish Actions️"
           tiddlers-directory: src
           default-home-tiddlers: "[[Hello, Publish]] [[Hello, Publish_zh-CN]]"
           version: "master"

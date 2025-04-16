@@ -1,6 +1,15 @@
-// local dev test
-// import { TiddlyWiki } from 'tiddlywiki';
-import { TiddlyWiki } from '../lib/tiddlywiki/boot/boot.js';
+import fs from 'fs';
+import path from 'path';
+
+let TiddlyWikiModule;
+const localBootPath = path.resolve('./lib/tiddlywiki/boot/boot.js');
+console.log(localBootPath)
+if (fs.existsSync(localBootPath)) {
+  TiddlyWikiModule = await import(localBootPath);
+} else {
+  TiddlyWikiModule = await import('tiddlywiki');
+}
+const { TiddlyWiki } = TiddlyWikiModule;
 
 export const tiddlywiki = (args = [], preloadTiddlers = [], callback) => {
   return new Promise((resolve, reject) => {

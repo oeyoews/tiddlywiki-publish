@@ -21,6 +21,15 @@ const buildArgs = [
 // 获取命令行参数
 const _args = process.argv.slice(2);
 
+/**
+ * 解析命令行参数
+ * @typedef {Object} Args
+ * @property {string} [tiddlerDir] - tiddlers 目录
+ * @property {string} [defaultHomeTiddler] - 默认首页 tiddler
+ * @property {string} [siteTitle] - 站点标题
+ */
+
+/** @type {Args} */
 const args = minimist(_args, {
   string: ['tiddlers-directory', 'default-home-tiddlers', 'site-title'],
   unknown: false,
@@ -31,7 +40,7 @@ const args = minimist(_args, {
   },
 });
 
-console.log(args)
+// console.log(args)
 
 // const command = ['--build'];
 const __dirname = import.meta.dirname;
@@ -69,7 +78,7 @@ if (args.siteTitle) {
   preloadTiddlers.push(siteTitleTiddler);
 }
 
-console.log(preloadTiddlers, 'preloadTiddlers');
+// console.log(preloadTiddlers, 'preloadTiddlers');
 
 await tiddlywiki(buildArgs, preloadTiddlers);
 console.log('✅ TiddlyWiki Publish successfully! 🎉');

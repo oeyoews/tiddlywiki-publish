@@ -23,4 +23,4 @@ jobs:
       - uses: oeyoews/tiddlywiki-publish@main
         with:
           tiddlers-directory: src
-          default-home-tiddlers: "Hello Publish, Hello Publish_zh-CN"
+          default-home-tiddlers: "[[Hello, Publish]] [[Hello Publish_zh-CN]]"

@@ -62,14 +62,18 @@ const defaultTiddlers = {
   text: '',
 };
 
+// if (defaultTiddlersValue) {
+//   defaultTiddlers.text = defaultTiddlersValue
+//     .split(',')
+//     .map((item) => {
+//       const trimmed = item.trim();
+//       return trimmed.includes(' ') ? `[[${trimmed}]]` : trimmed;
+//     })
+//     .join(' ');
+// }
+
 if (defaultTiddlersValue) {
-  defaultTiddlers.text = defaultTiddlersValue
-    .split(',')
-    .map((item) => {
-      const trimmed = item.trim();
-      return trimmed.includes(' ') ? `[[${trimmed}]]` : trimmed;
-    })
-    .join(' ');
+  defaultTiddlers.text = defaultTiddlersValue;
 }
 
 console.log(defaultTiddlers, 'DefaultTiddlers', defaultTiddlersValue);

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tiddlywiki src --listen",
-    "build:test": "node ./publish.mjs --site-title='HelloPublish'",
+    "build:test": "node ./publish.mjs --site-title HelloPublish",
     "build": "node ./publish.mjs"
   },
   "keywords": [],

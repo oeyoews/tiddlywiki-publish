@@ -2,12 +2,16 @@ name: "TiddlyWiki Publish SPA"
 description: "TiddlyWiki Publish SPA"
 
 inputs:
+  site-title:
+    description: ""
+    required: false
+    default: ""
   actions-folder:
-    description: "Directory for published"
+    description: "action folder"
     required: false
     default: ".actions"
   tiddlywiki-lib-folder:
-    description: "Directory for published"
+    description: "tiddlywiki lib folder"
     required: false
     default: "lib/tiddlywiki"
   tiddlers-directory:
@@ -15,7 +19,7 @@ inputs:
     required: true
     default: "."
   output-directory:
-    description: "Directory for published"
+    description: "Directory for output"
     required: false
     default: '.tiddlywiki'
   default-home-tiddlers:
@@ -23,7 +27,7 @@ inputs:
     required: false
     default: ""
   version:
-    description: "Frontend version of Logseq - git tag or SHA"
+    description: "tiddlywiki version"
     required: false
     default: "v5.3.6"
 
@@ -52,7 +56,7 @@ runs:
         path: ${{ inputs.tiddlywiki-lib-folder }}
 
     - name: Build Page
-      run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }} --default-home-tiddlers="${{ inputs.default-home-tiddlers }}"
+      run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }} --default-home-tiddlers="${{ inputs.default-home-tiddlers }}" --site-title="${{ inputs.site-title }}"
       shell: bash
 
     # - name: Upload artifact

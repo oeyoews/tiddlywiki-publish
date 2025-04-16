@@ -76,7 +76,7 @@ if (defaultTiddlersValue) {
   defaultTiddlers.text = defaultTiddlersValue;
 }
 
-console.log(defaultTiddlers, 'DefaultTiddlers', defaultTiddlersValue);
+console.log(defaultTiddlers, 'DefaultTiddlers');
 
 await tiddlywiki(buildArgs, defaultTiddlersValue ? [defaultTiddlers] : []);
 console.log('✅ TiddlyWiki Publish successfully! 🎉');

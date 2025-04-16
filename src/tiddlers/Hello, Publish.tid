@@ -1,7 +1,7 @@
 created: 20250414135911267
 modified: 20250414135911267
 title: Hello, Publish
-type: text/vnd.tiddlywiki
+type: text/markdown
 description: Publish this page from tiddlywiki-publish.
 
 !! TiddlyWiki Publish SPA

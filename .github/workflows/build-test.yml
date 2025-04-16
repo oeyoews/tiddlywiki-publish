@@ -24,3 +24,4 @@ jobs:
         with:
           tiddlers-directory: src
           default-home-tiddlers: "[[Hello, Publish]] [[Hello, Publish_zh-CN]]"
+          version: "@master"

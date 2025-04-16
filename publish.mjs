@@ -75,7 +75,7 @@ for (const { arg, title } of tiddlerConfigs) {
   if (arg === 'favicon' && args[arg]) {
     const faviconPath = path.join(__dirname, args[arg]);
     if (fs.existsSync(faviconPath)) {
-      const text = fs.readFileSync(faviconPath);
+      const text = fs.readFileSync(faviconPath, 'utf-8');
       preloadTiddlers.push({ title, text });
     }
     break;

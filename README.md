@@ -4,7 +4,7 @@
 
 ## Action Usage
 
-1.  Save the above code snippet as `.github/workflows/build.yml` file.
+1.  Save the below code snippet as `.github/workflows/build.yml` file.
 
 ```bash
 name: Deploy TiddlyWiki to GitHub Pages

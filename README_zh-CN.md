@@ -4,7 +4,7 @@
 
 ## Action 用法
 
-1.  将上述代码片段保存为 `.github/workflows/build.yml` 文件。
+1.  将下面代码片段保存为 `.github/workflows/build.yml` 文件。
 
 ```bash
 name: Deploy TiddlyWiki to GitHub Pages

@@ -25,8 +25,15 @@ const tiddlerDir =
 
 // const command = ['--build'];
 const __dirname = import.meta.dirname;
-if (tiddlerDir && fs.existsSync(path.join(__dirname, tiddlerDir))) {
-  buildArgs.unshift(tiddlerDir);
+if (tiddlerDir) {
+  const tiddlerPath = fs.existsSync(
+    path.join(__dirname, tiddlerDir, 'tiddlers')
+  );
+  if (tiddlerPath) {
+    buildArgs.unshift(tiddlerDir);
+  } else {
+    console.error(tiddlerPath, 'is not existing')
+  }
   // 如果tiddlerDir !== tiddler, 并且tiddlerDir 不存在tiddlywiki.info, 就把tiddlywiki.info 复制到tiddlerDir
   // if (tiddlerDir !== '.') {
   //   const tiddlywikiInfoPath = `${tiddlerDir}/tiddlywiki.info`;

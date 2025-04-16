@@ -1,14 +1,14 @@
-created: 20250414135911267
-modified: 20250414135911267
-title: Hello, Publish
-type: text/markdown
-description: Publish this page from tiddlywiki-publish.
+[[中文文档|Hello, Publish_zh-CN]] | English
 
 ## <img src="https://tiddlywiki.com/favicon.ico" alt="TiddlyWiki Logo" width="22" height="22" style="vertical-align:middle;"> TiddlyWiki Publish SPA 🚀
 
+TiddlyWiki Publish SPA is an automation tool for one-click deployment of TiddlyWiki sites to GitHub Pages.
+Simply configure the workflow file and you can easily publish your TiddlyWiki content online, enjoying convenient knowledge management and sharing.
+It supports custom tiddlers directory and TiddlyWiki version, suitable for personal blogs, knowledge bases, and more. ✨
+
 ## Action Usage 🛠️
 
-1.  Save the following snippet as `.github/workflows/build.yml` file.
+1.  Save the following snippet as a `.github/workflows/build.yml` file.
 
 ```bash
 name: Deploy TiddlyWiki to GitHub Pages
@@ -48,4 +48,4 @@ jobs:
 
 ## Example Project ✨
 
-* [[neotw-tiddlers|https://github.com/oeyoews/neotw-tiddlers]]
+* [neotw-tiddlers](https://github.com/oeyoews/neotw-tiddlers)

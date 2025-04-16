@@ -3,7 +3,6 @@ import path from 'path';
 
 let TiddlyWikiModule;
 const localBootPath = path.resolve('./lib/tiddlywiki/boot/boot.js');
-console.log(localBootPath)
 if (fs.existsSync(localBootPath)) {
   TiddlyWikiModule = await import(localBootPath);
 } else {

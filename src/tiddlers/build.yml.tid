@@ -1,6 +1,6 @@
 created: 20250416034742940
 modified: 20250416034757656
-tags: 
+tags:
 title: build.yml
 type: text/vnd.tiddlywiki
 
@@ -30,4 +30,5 @@ jobs:
         with:
           tiddlers-directory: .
           version: v5.3.6
+          default-home-tiddlers: "[[Hello, Publish]] [[Hello, Publish_zh-CN]]"
 ```

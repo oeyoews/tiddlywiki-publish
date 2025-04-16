@@ -38,6 +38,7 @@ jobs:
         with:
           tiddlers-directory: .
           version: v5.3.6
+          default-home-tiddlers: "[[Hello, Publish]] [[Hello, Publish_zh-CN]]"
 ```
 
 **Notes:**

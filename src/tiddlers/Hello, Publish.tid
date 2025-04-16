@@ -4,9 +4,9 @@ title: Hello, Publish
 type: text/markdown
 description: Publish this page from tiddlywiki-publish.
 
-!! TiddlyWiki Publish SPA
+## TiddlyWiki Publish SPA
 
-!! Action Usage
+## Action Usage
 
 1.  Save the above code snippet as `.github/workflows/build.yml` file.
 
@@ -45,6 +45,6 @@ jobs:
 3.  After successful deployment, go to GitHub repository's Settings -> Pages -> Deploy from branch, and select the `gh-pages` branch as the deployment source.
 
 
-!! Examples
+## Examples
 
 * [[neotw-tiddlers|https://github.com/oeyoews/neotw-tiddlers]]

@@ -62,7 +62,7 @@ if (defaultTiddlersValue) {
     defaultTiddlers.text = defaultTiddlersValue.split(',')
 }
 
-console.log(defaultTiddlers, 'DefaultTiddlers')
+console.log(defaultTiddlers, 'DefaultTiddlers', defaultTiddlersValue)
 
 await tiddlywiki(buildArgs, defaultTiddlersValue ? [defaultTiddlers]: []);
 console.log('✅ TiddlyWiki Publish successfully! 🎉');

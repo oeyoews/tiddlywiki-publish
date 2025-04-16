@@ -29,7 +29,7 @@ const defaultTiddlersIndex = args.findIndex((arg) =>
 );
 
 const defaultTiddlersValue = args[defaultTiddlersIndex].slice(
-  defaultHomeTiddlers.length+1
+  defaultHomeTiddlers.length + 1
 );
 
 // const command = ['--build'];
@@ -65,7 +65,11 @@ const defaultTiddlers = {
 if (defaultTiddlersValue) {
   defaultTiddlers.text = defaultTiddlersValue
     .split(',')
-    .map((item) => `[[${item.trim()}]]`);
+    .map((item) => {
+      const trimmed = item.trim();
+      return trimmed.includes(' ') ? `[[${trimmed}]]` : trimmed;
+    })
+    .join(' ');
 }
 
 console.log(defaultTiddlers, 'DefaultTiddlers', defaultTiddlersValue);

@@ -1,8 +1,8 @@
-## TiddlyWiki 发布 SPA
+## TiddlyWiki 发布 SPA 🚀
 
 中文文档 | [English](./README.md)
 
-## Action 用法
+## Action 用法 🛠️
 
 1.  将下面代码片段保存为 `.github/workflows/build.yml` 文件。
 
@@ -36,11 +36,12 @@ jobs:
 
 **注意：**
 
-1.  上述 Action 用于将 TiddlyWiki 站点发布到 GitHub Pages。
-2.  `tiddlers-directory` 指定了包含 TiddlyWiki tiddlers 的目录。
-3.  部署成功后，请前往 GitHub 仓库的 Settings -> Pages -> Deploy from branch，并选择 `gh-pages` 分支作为部署源。
+1.  上述 Action 用于将 TiddlyWiki 站点发布到 GitHub Pages。🌐
+2.  `tiddlers-directory` 指定了包含 TiddlyWiki tiddlers 的目录。📂
+3.  部署成功后，请前往 GitHub 仓库的 Settings -> Pages -> Deploy from branch，并选择 `gh-pages` 分支作为部署源。✅
 
+---
 
-## 示例
+## 示例 ✨
 
 * [neotw-tiddlers](https://github.com/oeyoews/neotw-tiddlers)

@@ -4,11 +4,11 @@ title: Hello, Publish
 type: text/markdown
 description: Publish this page from tiddlywiki-publish.
 
-## TiddlyWiki Publish SPA
+## <img src="https://tiddlywiki.com/favicon.ico" alt="TiddlyWiki Logo" width="22" height="22" style="vertical-align:middle;"> TiddlyWiki Publish SPA 🚀
 
-## Action Usage
+## Action Usage 🛠️
 
-1.  Save the above code snippet as `.github/workflows/build.yml` file.
+1.  Save the following snippet as `.github/workflows/build.yml` file.
 
 ```bash
 name: Deploy TiddlyWiki to GitHub Pages
@@ -38,13 +38,14 @@ jobs:
           version: v5.3.6
 ```
 
-**Note:**
+**Notes:**
 
-1.  This Action is used to publish TiddlyWiki sites to GitHub Pages.
+1.  This Action is used to publish TiddlyWiki sites to GitHub Pages. 🌐
 2.  `tiddlers-directory` specifies the directory containing TiddlyWiki tiddlers.
-3.  After successful deployment, go to GitHub repository's Settings -> Pages -> Deploy from branch, and select the `gh-pages` branch as the deployment source.
+3.  After successful deployment, go to your GitHub repository's Settings -> Pages -> Deploy from branch, and select the `gh-pages` branch as the deployment source. ✅
 
+---
 
-## Examples
+## Example Project ✨
 
 * [[neotw-tiddlers|https://github.com/oeyoews/neotw-tiddlers]]

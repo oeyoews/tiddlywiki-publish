@@ -31,7 +31,6 @@ const defaultTiddlersIndex = args.findIndex((arg) =>
 const defaultTiddlersValue = args[defaultTiddlersIndex].slice(
   defaultHomeTiddlers.length+1
 );
-console.log(defaultTiddlersValue)
 
 // const command = ['--build'];
 const __dirname = import.meta.dirname;
@@ -69,7 +68,7 @@ if (defaultTiddlersValue) {
     .map((item) => item.trim());
 }
 
-console.log(defaultTiddlers, 'DefaultTiddlers', defaultTiddlersValue);
+// console.log(defaultTiddlers, 'DefaultTiddlers', defaultTiddlersValue);
 
 await tiddlywiki(buildArgs, defaultTiddlersValue ? [defaultTiddlers] : []);
 console.log('✅ TiddlyWiki Publish successfully! 🎉');

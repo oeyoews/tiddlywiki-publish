@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tiddlywiki src --listen",
+    "build:test": "node ./publish.mjs --default-home-tiddlers='Hello Publish'",
     "build": "node ./publish.mjs"
   },
   "keywords": [],

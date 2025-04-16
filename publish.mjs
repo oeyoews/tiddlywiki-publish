@@ -23,9 +23,14 @@ const tiddlerDirIndex = args.findIndex((arg) => arg === '--tiddlers-directory');
 const tiddlerDir =
   tiddlerDirIndex !== -1 ? args[tiddlerDirIndex + 1] : undefined;
 
-const defaultTiddlersIndex = args.findIndex((arg) => arg === '--default-home-tiddlers');
-const defaultTiddlersValue =
-  defaultTiddlersIndex !== -1 ? args[defaultTiddlersIndex + 1] : undefined;
+const defaultHomeTiddlers = '--default-home-tiddlers';
+const defaultTiddlersIndex = args.findIndex((arg) =>
+  arg.startsWith(defaultHomeTiddlers)
+);
+
+const defaultTiddlersValue = args[defaultTiddlersIndex].slice(
+  defaultHomeTiddlers.length+1
+);
 
 // const command = ['--build'];
 const __dirname = import.meta.dirname;
@@ -52,17 +57,18 @@ if (tiddlerDir) {
   buildArgs.unshift('.');
 }
 
-const defaultTiddlers =
-  {
-    title: "$:/DefaultTiddlers",
-    text: ''
-  }
+const defaultTiddlers = {
+  title: '$:/DefaultTiddlers',
+  text: '',
+};
 
 if (defaultTiddlersValue) {
-    defaultTiddlers.text = defaultTiddlersValue.split(',')
+  defaultTiddlers.text = defaultTiddlersValue
+    .split(',')
+    .map((item) => item.trim());
 }
 
-console.log(defaultTiddlers, 'DefaultTiddlers', defaultTiddlersValue)
+console.log(defaultTiddlers, 'DefaultTiddlers', defaultTiddlersValue);
 
-await tiddlywiki(buildArgs, defaultTiddlersValue ? [defaultTiddlers]: []);
+await tiddlywiki(buildArgs, defaultTiddlersValue ? [defaultTiddlers] : []);
 console.log('✅ TiddlyWiki Publish successfully! 🎉');

@@ -52,7 +52,7 @@ runs:
         path: ${{ inputs.tiddlywiki-lib-folder }}
 
     - name: Build Page
-      run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }} --default-home-tiddlers ${{ inputs.default-home-tiddlers }}
+      run: node ${{ inputs.actions-folder }}/publish.mjs --tiddlers-directory ${{ inputs.tiddlers-directory }} --default-home-tiddlers=${{ inputs.default-home-tiddlers }}
       shell: bash
 
     # - name: Upload artifact

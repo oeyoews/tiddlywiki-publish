@@ -49,7 +49,9 @@ const args = minimist(_args, {
 // console.log(args)
 
 // const command = ['--build'];
-const __dirname = import.meta.dirname;
+const ___dirname = import.meta.dirname;
+const __dirname = path.resolve(___dirname, '..');
+
 if (args.tiddlerDir) {
   const tiddlerDir = path.resolve(__dirname, args.tiddlerDir, 'tiddlers');
   const tiddlerPath = fs.existsSync(tiddlerDir);

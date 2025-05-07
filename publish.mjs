@@ -51,13 +51,12 @@ const args = minimist(_args, {
 // const command = ['--build'];
 const __dirname = import.meta.dirname;
 if (args.tiddlerDir) {
-  const tiddlerPath = fs.existsSync(
-    path.join(__dirname, args.tiddlerDir, 'tiddlers')
-  );
+  const tiddlerDir = path.resolve(__dirname, args.tiddlerDir);
+  const tiddlerPath = fs.existsSync(tiddlerDir);
   if (tiddlerPath) {
     buildArgs.unshift(args.tiddlerDir);
   } else {
-    console.error('❌', tiddlerPath, 'is not existing');
+    console.error('❌', tiddlerDir, 'is not existing');
   }
 } else {
   buildArgs.unshift('.');

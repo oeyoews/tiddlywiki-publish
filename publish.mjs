@@ -57,6 +57,7 @@ if (args.tiddlerDir) {
     buildArgs.unshift(args.tiddlerDir);
   } else {
     console.error('❌', tiddlerDir, 'is not existing');
+    console.log(__dirname, 'tiddlerDir', tiddlerDir);
   }
 } else {
   buildArgs.unshift('.');
